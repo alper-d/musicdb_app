@@ -1,17 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
 import MainComponent from './Components/MainComponent'
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter, Router} from 'react-router-dom'
+import {Provider} from 'react-redux'
+import {reduxConfig} from './redux/reduxConfig'
 
-
+const store = reduxConfig()
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <MainComponent/>
-      </div>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+          <MainComponent/>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

@@ -1,5 +1,49 @@
+.footer {
+  height: '150px';
+}
+.searchCard{
+  background: black;
+  box-shadow: 10px 10px 10px grey;
+  transition: 0.4s linear;
+  border-color: white;
+  
+}
+.loading{
+  opacity: 0.5;
+  background-color: grey;
+}
+.searchCard:hover{
+  opacity: 0.7;
+}
+.music-bar{
+  box-shadow: 10px 10px 10px grey;
+  transition: 0.3s linear;
+}
+.music-bar:hover{
+  opacity: 0.8;
+}
+.recent-list{
+  margin-bottom: 50px;
+}
+.search-list{
+  margin-bottom: 50px;
+}
+#searchKey{
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px grey;
+}
 .App {
   text-align: center;
+}
+
+#body-app{
+  background-color: wheat;
+  opacity: 0.9;
+  transition: all 1.0s linear;
+}
+
+.music-card{
+  background: rgb(6, 132, 190);
 }
 
 .App-logo {
@@ -12,7 +56,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

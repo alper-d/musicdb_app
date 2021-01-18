@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
+import {Card, CardBody, CardImg, CardTitle} from 'reactstrap'
 import {Link} from 'react-router-dom'
-import {Card, CardBody, CardImg, CardImgOverlay, CardText, CardTitle} from 'reactstrap'
 
-class SearchCard extends Component{
+class ArtistPageCard extends Component{
     constructor(props){
         super(props)
     }
@@ -11,14 +11,8 @@ class SearchCard extends Component{
         return(
             <Card className='h-100 searchCard inverse'>
             <Link to={`/album/${this.props.musicInfo.album_id}`}>
-                <CardImg width='100%' src={this.props.musicInfo.album_images[0]}>
-                </CardImg>
-                <CardImgOverlay>
-                </CardImgOverlay>
+                <CardImg width='100%' src={this.props.musicInfo.album_images[0]}></CardImg>
                 <CardBody>
-                    <CardText tag='h6'>
-                        {this.props.musicInfo.name}
-                    </CardText>
                     <CardTitle style={{opacity: 0.8, background: 'white',color: 'black', 'fontWeight': 'bold','borderRadius':'15px'}}>
                     <span className='fa fa-book'></span>{this.props.musicInfo.album_name}</CardTitle>
                 </CardBody>
@@ -26,6 +20,8 @@ class SearchCard extends Component{
             </Card>
         )
     }
+
+    
 }
 
-export default SearchCard
+export default ArtistPageCard
