@@ -56,7 +56,7 @@ render(){
             const searchCards = this.props.searchResults.map((musicInfo) => {
                 if(this.props.match.params.query === this.state.currentQuery){
                     return(
-                        <div className='col-12 col-sm-2 col-md-3 my-3' key={musicInfo.id}>
+                        <div className='col-12 col-md-3 my-3' key={musicInfo.id}>
                             <SearchCard musicInfo={musicInfo}></SearchCard>
                         </div>
                 )}else{

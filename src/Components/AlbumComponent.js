@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {Card, CardImg, CardTitle,CardSubtitle} from 'reactstrap'
 import {baseUrl, AUTH_TOKEN, secondsToDuration} from '../Utilities/Constants'
-import { updateCurrentlyPlaying } from '../redux/ActionCreators'
+import {updateCurrentlyPlaying } from '../redux/ActionCreators'
 import {Badge, Button, CardDeck, ListGroup, ListGroupItem, PopoverBody, PopoverHeader, UncontrolledPopover} from 'reactstrap'
 
 
@@ -26,7 +26,7 @@ class AlbumComponent extends Component{
     }
     componentDidMount(){
         const id = this.props.match.params.id
-        const albumInfo = fetch(`${baseUrl}/api/album/${id}`, {
+        fetch(`${baseUrl}/api/album/${id}`, {
                      method: 'GET',
             headers: {
                 'authorization': AUTH_TOKEN
@@ -48,7 +48,7 @@ class AlbumComponent extends Component{
                 musics: response.musics
             })
             const artistID = response.album.artist_id
-            const artistInfo = fetch(`${baseUrl}/api/artist/${artistID}`, {
+            fetch(`${baseUrl}/api/artist/${artistID}`, {
                 method: 'GET',
             headers: {
                 'authorization': AUTH_TOKEN
@@ -89,7 +89,7 @@ class AlbumComponent extends Component{
                 return(
                     <div>
                         <UncontrolledPopover trigger='hover' placement='left' target={`infoPopover${music.id}`}>
-                        <PopoverHeader><a href={music.license_ccurl} target='_blank'>Click to see licence.</a></PopoverHeader>
+                        <PopoverHeader><a href={music.license_ccurl} target='_blank' rel="noreferrer">Click to see licence.</a></PopoverHeader>
                         <PopoverBody></PopoverBody>
                         </UncontrolledPopover>
                     </div>
@@ -162,4 +162,4 @@ class AlbumComponent extends Component{
     
 }
 
-export default connect(null, mapDispatchToProps)(AlbumComponent)
+export default withRouter(connect(null, mapDispatchToProps)(AlbumComponent))

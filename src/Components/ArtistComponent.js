@@ -34,9 +34,8 @@ class ArtistComponent extends Component{
     }
 
     componentDidMount(){
-        const searchKeyString = this.props.match.params.query
         const artistID = this.props.match.params.id
-        const artistInfo = fetch(`${baseUrl}/api/artist/${artistID}`, {
+        fetch(`${baseUrl}/api/artist/${artistID}`, {
             method: 'GET',
         headers: {
             'authorization': AUTH_TOKEN

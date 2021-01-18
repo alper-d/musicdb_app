@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
-import {Link, withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import { getRecentMusic,updateCurrentlyPlaying } from '../redux/ActionCreators'
-import {baseUrl,secondsToDuration} from '../Utilities/Constants'
+import {secondsToDuration} from '../Utilities/Constants'
 import {CardTitle,
         CardSubtitle,Badge, 
         Button, 
-        CardDeck, 
         ListGroupItem, 
         PopoverBody, 
         PopoverHeader, 
