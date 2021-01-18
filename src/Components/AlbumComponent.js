@@ -1,14 +1,10 @@
 import React, {Component} from 'react'
-import SearchCard from './SearchCard'
-import SearchBar from './SearchBar'
-import {Badge, Button, CardDeck, ListGroup, ListGroupItem, PopoverBody, PopoverHeader, UncontrolledPopover} from 'reactstrap'
-import {SEARCH_PLACEHOLDER} from '../Utilities/Constants'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {Card, CardImg, CardTitle,CardSubtitle} from 'reactstrap'
 import {baseUrl, AUTH_TOKEN, secondsToDuration} from '../Utilities/Constants'
-import fileDownload from 'js-file-download'
 import { updateCurrentlyPlaying } from '../redux/ActionCreators'
+import {Badge, Button, CardDeck, ListGroup, ListGroupItem, PopoverBody, PopoverHeader, UncontrolledPopover} from 'reactstrap'
 
 
 const mapDispatchToProps = (dispatch) =>{
